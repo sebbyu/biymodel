@@ -1,0 +1,10 @@
+ <div class="data">
+   <label id="label" for="data">upload your data</label>
+   <button id="button">Choose File...</button>
+ </div>
+
+<div class="layers">
+  <div cdkDrag class="layer" *ngFor="let layer of layers">
+    {{layer}}
+  </div>
+</div>

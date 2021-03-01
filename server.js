@@ -1,15 +1,14 @@
-const express = require('express')
-const serveStatic = require('serve-static')
-const path = require('path')
+const express = require('express');
 
-const app = express()
+const app = express();
 
-app.use('/', serveStatic(path.join(__dirname, '/dist')))
+app.use(express.static('./dist/biy'));
 
-app.get(/.*/, function(req, res) {
-  res.sendFile(path.join(__dirname, '/dist/index.html'))
-})
+app.get('/*', function (req, res) {
+  res.sendFile('index.html', { root: 'dist/biy' }
+  );
+});
 
-const port = process.env.PORT || 8080
-app.listen(port)
-console.log('app is listening on port: ${port}')
+app.listen(process.env.PORT || 8080);
+
+console.log(`Running on port ${process.env.PORT || 8080}`)

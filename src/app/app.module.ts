@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { Page404Component } from './page404/page404.component';
 import { ComingsoonComponent } from './comingsoon/comingsoon.component';
 import { BuildComponent } from './build/build.component';
+import { RegressionComponent } from './regression/regression.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { BuildComponent } from './build/build.component';
     FooterComponent,
     Page404Component,
     ComingsoonComponent,
-    BuildComponent
+    BuildComponent,
+    RegressionComponent
   ],
   imports: [
     BrowserModule,

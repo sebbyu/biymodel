@@ -1,0 +1,94 @@
+<div class="main">
+  <div class="top">
+    <form id="form" action="">
+      <p id="title">Upload your data here</p>
+      <input id="input" type="file">
+    </form>
+  </div>
+  <div class="bottom">
+    <div cdkDropListGroup>
+      <div class="model-list">
+        <h2 id="title">Your Model</h2>
+        <div class="model-layers"
+        cdkDropList
+        [cdkDropListData]="model_layers"
+        (cdkDropListDropped)="model_drop($event)">
+          <div class="model-box"
+          *ngFor="let layer of model_layers"
+          cdkDrag>
+            {{ layer }}
+          </div>
+        </div>
+      </div>
+      <div class="linear-list">
+        <h2 id="title">Layers</h2>
+        <div class="linear-layers"
+        cdkDropList
+        [cdkDropListData]="linear_layers"
+        cdkDropListSortingDisabled
+        (cdkDropListDropped)="linear_drop($event)">
+          <div class="linear-box"
+          *ngFor="let layer of linear_layers"
+          cdkDrag> 
+            {{ layer }}
+          </div>
+        </div>
+      </div>
+      <div class="activation-list">
+        <h2 id="title">Activation Layers</h2>
+        <div class="activation-layers"
+        cdkDropList
+        [cdkDropListData]="activation_layers"
+        cdkDropListSortingDisabled
+        (cdkDropListDropped)="activation_drop($event)">
+          <div class="activation-box"
+          *ngFor="let layer of activation_layers"
+          cdkDrag> 
+            {{ layer }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- <div class="layers">
+  <div cdkDrag class="layer" *ngFor="let layer of layers">
+    {{layer}}
+  </div>
+  <div cdkDrag class="layer" *ngFor="let layer of activation_layers">
+    {{layer}}
+  </div>
+</div> -->
+
+<!-- <div cdkDropListGroup>
+  <div class="model-list">
+    <h2 id="title">Your Model</h2>
+    <div class="model-layers"
+    cdkDropList
+    [cdkDropListData]="model_layers"
+    cdkDropListSortingDisabled
+    (cdkDropListDropped)="drop($event)">
+      <div class="model-box"
+      *ngFor="let layer of model_layers"
+      cdkDrag>
+        {{ layer }}
+      </div>
+    </div>
+  </div>
+  <div class="available-list">
+    <h2 id="title">Available Layers</h2>
+    <div class="available-layers"
+    cdkDropList
+    [cdkDropListData]="activation_layers"
+    cdkDropListSortingDisabled
+    (cdkDropListDropped)="drop($event)">
+      <div class="available-box"
+      *ngFor="let layer of activation_layers"
+      cdkDrag> 
+        {{ layer }}
+      </div>
+    </div>
+  </div>
+</div> -->
